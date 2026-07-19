@@ -16,6 +16,7 @@ jobs:
       - name: Executa o selenium
         continue-on-error: true
         run: |
+          java --version
           echo "🚀 Executa o Selenium"
           mvn compile exec:java -Dexec.mainClass="br.com.dani.portfolio_web_selenium_amazon.FluxoPesquisaAmazon"
 
