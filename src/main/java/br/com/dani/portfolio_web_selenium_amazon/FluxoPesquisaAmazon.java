@@ -2,6 +2,7 @@ package br.com.dani.portfolio_web_selenium_amazon;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,7 +14,13 @@ import java.time.Duration;
 
 public class FluxoPesquisaAmazon {
     public static void main(String[] args) throws IOException {
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        if ((args.length > 0) && "automatizado".equalsIgnoreCase(args[0])) {
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+        }
+        WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://www.amazon.com.br");
 
