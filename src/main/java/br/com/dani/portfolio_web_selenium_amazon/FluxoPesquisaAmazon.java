@@ -17,7 +17,7 @@ public class FluxoPesquisaAmazon {
         driver.manage().window().maximize();
         driver.get("https://www.amazon.com.br");
 
-        WebDriverWait espera = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait espera = new WebDriverWait(driver, Duration.ofSeconds(90));
 
         WebElement campoPesquisa = espera.until(
                 ExpectedConditions.visibilityOfElementLocated(By.id("twotabsearchtextbox")));
